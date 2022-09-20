@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     let targetValue = Int.random(in: 0...100)
-    @State var aletrPresent = false
+    @State private var aletrPresent = false
     @State private var currentValue: Double = 0
     
     var body: some View {
@@ -26,12 +26,13 @@ struct ContentView: View {
             }
             
             Button("Проверь меня!") {
-                
+                aletrPresent = true
             }
+            .alert(Text("Your score \(computeScore())"), isPresented: $aletrPresent) {}
+            
             Button("Начать заново") {
                 print("2")
             }
-            Spacer()
             Text(currentValue.formatted())
         }
         .padding()
