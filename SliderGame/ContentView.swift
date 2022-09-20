@@ -21,7 +21,7 @@ struct ContentView: View {
             }
             HStack {
                 Text("0")
-                SliderView(value: $currentValue)
+                SliderView(currentValue: $currentValue)
                 Text("100")
             }
             
